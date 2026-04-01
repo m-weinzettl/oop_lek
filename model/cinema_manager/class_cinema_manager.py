@@ -9,12 +9,12 @@ class Cinema_Manager:
         print("\n--- Neuen Film erfassen ---")
         title = input("Titel: ")
         try:
-            duration = int(input("Dauer (Minuten): "))
+            duration = int(input("Dauer (in Minuten): "))
             fsk = int(input("Altersfreigabe (FSK): "))
 
             new_movie = Movie(title, duration, fsk) 
             self.movies.append(new_movie)
-            print(f"Erfolg: Film {new_movie} wurde gespeichert.")
+            print(f"Erfolg: Film ### {new_movie.title} ### wurde gespeichert.")
         except ValueError:
             print("Fehler: Dauer und FSK müssen Zahlen sein!")
 
@@ -24,7 +24,7 @@ class Cinema_Manager:
             print("Keine Filme registriert.")
         else:
             for i, movies in enumerate(self.movies, 1):
-                print(f"[{i}] {movies}")
+                print(f"[{i}] Titel: {movies.title}| Länge: {movies.duration}| (FSK: {movies.fsk})")
 
     def presentation_catch(self):
         print("\n--- Neuen Vorstellung ---")
@@ -34,7 +34,7 @@ class Cinema_Manager:
             return
 
         for i, movie in enumerate(self.movies, 1):
-            print(f"[{i}] {movie.title} (FSK: {movie.fsk})")
+            print(f"[{i}] Titel: {movie.title}| Länge: {movie.duration}| (FSK: {movie.fsk})")
 
         try:
             choice = int(input("Welchen Film wollen Sie?: ")) -1

@@ -15,6 +15,7 @@ class Menu:
     3. Plätze reservieren
     4. Reservierung stornieren
     5. Vorstellungsstatus anzeigen
+    6. Alle Filme anzeigen
     Q. Beenden
     """
 
@@ -40,6 +41,9 @@ class Menu:
 
             elif user_option == "5":
                 self.manager.show_presentations_status()
+
+            elif user_option == "6":
+                self.manager.show_movies()
 
             elif user_option == "Q" or "q":
                 print("Programm beendet. Auf Wiedersehen im Gotham Noir!")
