@@ -1,7 +1,5 @@
 from model.cinema_manager.class_cinema_manager import Cinema_Manager
 
-from model.cinema_manager.class_cinema_manager import Cinema_Manager
-
 
 class Menu:
     def __init__(self):
@@ -10,7 +8,7 @@ class Menu:
     def menu_user_input():
         return """
     **************************
-    * GOTHAM NOIR       *
+    * GOTHAM NOIR ************      
     **************************
     1. Neuen Film erfassen
     2. Neue Vorstellung erfassen
@@ -43,7 +41,7 @@ class Menu:
             elif user_option == "5":
                 self.manager.show_presentations_status()
 
-            elif user_option == "Q":
+            elif user_option == "Q" or "q":
                 print("Programm beendet. Auf Wiedersehen im Gotham Noir!")
                 break
             else:

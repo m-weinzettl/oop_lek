@@ -23,8 +23,8 @@ class Cinema_Manager:
         if not self.movies:
             print("Keine Filme registriert.")
         else:
-            for i, m in enumerate(self.movies, 1):
-                print(f"[{i}] {m}")
+            for i, movies in enumerate(self.movies, 1):
+                print(f"[{i}] {movies}")
 
     def presentation_catch(self):
         print("\n--- Neuen Vorstellung ---")
@@ -76,7 +76,7 @@ class Cinema_Manager:
             if 0 <= choice < len(self.presentations):
                 selected_presentation = self.presentations[choice]
 
-                occupants = int(input(f"Wie viele Plätze für '{selected_presentation.movie.title}'? "))
+                occupants = int(input(f"Wie viele Plätze für '{selected_presentation.movie.title}' reservieren? "))
 
                 reserved, date = selected_presentation.reserve_seats(occupants)
 
